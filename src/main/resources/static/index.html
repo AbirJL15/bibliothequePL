@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Chercheurs et Publications</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Gestion des Chercheurs et Publications</h1>
+    </div>
+</header>
+
+<!-- Liste des chercheurs -->
+<section id="chercheurs">
+    <h2>Liste des Chercheurs</h2>
+    <table id="chercheursTable">
+        <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>Nom</th>
+            <th>Grade</th>
+            <th>Statut</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Les chercheurs seront insérés ici -->
+        </tbody>
+    </table>
+</section>
+
+<div>
+    <h2>Rechercher un Chercheur par ID</h2>
+    <form id="formChercheurById">
+        <input type="number" id="chercheurId" placeholder="Entrez l'ID du Chercheur" required />
+        <button type="button" id="btnSearchChercheur">Rechercher</button>
+    </form>
+</div>
+
+<div id="chercheurResult">
+    <!-- Les informations sur le chercheur seront affichées ici -->
+</div>
+
+
+<div class="container">
+    <!-- Formulaire pour ajouter un chercheur -->
+    <section id="addChercheur">
+        <h2>Ajouter un Chercheur</h2>
+        <form id="chercheurForm">
+            <input type="text" id="chno" placeholder="Numéro du Chercheur" required>
+            <input type="text" id="chnom" placeholder="Nom du Chercheur" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="grade" placeholder="Grade (ex: PR)" required>
+            <input type="text" id="statut" placeholder="Statut (ex: P)" required>
+            <input type="text" id="facno" placeholder="Faculté" required>
+            <input type="text" id="labno" placeholder="Laboratoire" required>
+            <button type="submit">Ajouter Chercheur</button>
+        </form>
+    </section>
+
+
+
+    <!-- Section des publications -->
+    <section id="publications">
+        <h2>Publications des Chercheurs</h2>
+        <table id="publicationsTable">
+            <thead>
+            <tr>
+                <th>ID Publication</th>
+                <th>Titre</th>
+                <th>Thème</th>
+                <th>Auteur(s)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Les publications seront insérées ici -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Chercheurs par Laboratoire -->
+    <section id="chercheursByLab">
+        <h2>Chercheurs par Laboratoire</h2>
+        <input type="text" id="labnoSearch" placeholder="Numéro du Laboratoire">
+        <button onclick="getResearchersInLaboratory()">Voir Chercheurs</button>
+        <table id="chercheursLabTable">
+            <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>Nom</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Chercheurs dans le laboratoire -->
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
